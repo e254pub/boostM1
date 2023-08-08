@@ -14,11 +14,11 @@ namespace App\Scripts;
 class GarbageCollector
 {
     public function __construct() {
-        echo "Создание объекта\n";
+        echo 'Создание объекта';
     }
 
     public function __destruct() {
-        echo "Уничтожение объекта\n";
+        echo 'Уничтожение объекта';
     }
 }
 
@@ -38,7 +38,7 @@ unset($obj2);
 $obj3 = new GarbageCollector();
 
 // Завершаем выполнение скрипта
-echo "Конец скрипта\n";
+echo 'Конец скрипта';
 
 /**
 Zend Garbage Collector (ZGC) срабатывает в нескольких моментах во время выполнения скрипта:
