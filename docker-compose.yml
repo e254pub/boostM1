@@ -1,0 +1,24 @@
+version: '3.7'
+services:
+  mysql:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./:/opt/boostM1
+
+  nginx:
+    image: nginx:1.21
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/opt/boostM1
+      - ./docker/nginx/:/etc/nginx/conf.d/
+
+  php:
+    build:
+      context: ./docker/php
+    volumes:
+      - ./:/opt/boostM1

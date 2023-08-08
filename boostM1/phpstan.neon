@@ -1,0 +1,9 @@
+parameters:
+    autoload_files:
+        - %rootDir%/vendor/autoload.php
+
+includes:
+    - %rootDir%/vendor/phpstan/phpstan/phpstan.neon
+
+checkMissingIterableValueType: false
+checkGenericClassInNonGenericObjectType: false
