@@ -17,6 +17,10 @@ framework:
     php_errors:
         log: true
 
+    templating:
+        engines: [ 'twig' ]
+        cache: '%kernel.cache_dir%/twig'
+
 when@test:
     framework:
         test: true
