@@ -21,6 +21,19 @@ framework:
         engines: [ 'twig' ]
         cache: '%kernel.cache_dir%/twig'
 
+    messenger:
+        transports:
+            async: '%env(MESSENGER_TRANSPORT_DSN)%'
+        routing:
+            'App\Message\TestMessage': async
+        cache:
+        monolog:
+            handlers:
+                main:
+                    type: stream
+                    path: '%kernel.logs_dir%/%kernel.environment%.log'
+                    level: debug
+
 when@test:
     framework:
         test: true
